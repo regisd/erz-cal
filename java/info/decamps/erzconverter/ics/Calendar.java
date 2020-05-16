@@ -1,5 +1,7 @@
 package info.decamps.erzconverter.ics;
 
+import static java.util.Collections.singletonList;
+
 import com.google.auto.value.AutoValue;
 import java.io.PrintWriter;
 import java.util.List;
@@ -10,6 +12,10 @@ public abstract class Calendar {
 
   public static Calendar create(List<Event> events) {
     return new AutoValue_Calendar(events);
+  }
+
+  public static Calendar create(Event singleEvent) {
+    return create(singletonList(singleEvent));
   }
 
   public void toIcs(PrintWriter writer) {
