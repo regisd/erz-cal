@@ -22,18 +22,18 @@ public class CalendarTest {
     calendar.toIcs(new PrintWriter(out));
     assertThat(new String(out.toByteArray()))
         .isEqualTo(
-            "BEGIN:VCALENDAR\n"
-                + "VERSION:2.0\n"
-                + "PRODID:-//decamps/erzcal//NONSGML v1.0//EN\n"
-                + "NAME:Test\n"
-                + "DESCRIPTION:Test\n"
-                + "TIMEZONE-ID:Europe/Paris\n"
-                + "TZID:Europe/Paris\n"
-                + "BEGIN:VEVENT\n"
-                + "DTSTART;VALUE=DATE:19790714\n"
-                + "DTEND;VALUE=DATE:19790715\n"
-                + "SUMMARY:Fête à la Bastille\n"
-                + "END:VEVENT\n"
-                + "END:VCALENDAR\n");
+            "BEGIN:VCALENDAR\r\n"
+                + "VERSION:2.0\r\n"
+                + "PRODID:-//decamps/erzcal//NONSGML v1.0//EN\r\n"
+                + "NAME:Test\r\n"
+                + "DESCRIPTION:Test\r\n"
+                + "TIMEZONE-ID:Europe/Paris\r\n"
+                + "TZID:Europe/Paris\r\n"
+                + "BEGIN:VEVENT\r\n"
+                + "DTSTART;VALUE=DATE:19790714\r\n"
+                + "DTEND;VALUE=DATE:19790715\r\n"
+                + "SUMMARY:Fête à la Bastille\r\n"
+                + "END:VEVENT\r\n"
+                + "END:VCALENDAR\r\n");
   }
 }

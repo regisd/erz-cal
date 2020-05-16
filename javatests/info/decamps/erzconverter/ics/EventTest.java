@@ -12,10 +12,10 @@ public class EventTest {
     Event event = Event.create(LocalDate.of(1789, 07, 14), "Fête à la Bastille");
     assertThat(event.toIcs())
         .isEqualTo(
-            "BEGIN:VEVENT\n"
-                + "DTSTART;VALUE=DATE:17890714\n"
-                + "DTEND;VALUE=DATE:17890715\n"
-                + "SUMMARY:Fête à la Bastille\n"
-                + "END:VEVENT\n");
+            "BEGIN:VEVENT\r\n"
+                + "DTSTART;VALUE=DATE:17890714\r\n"
+                + "DTEND;VALUE=DATE:17890715\r\n"
+                + "SUMMARY:Fête à la Bastille\r\n"
+                + "END:VEVENT\r\n");
   }
 }

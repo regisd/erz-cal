@@ -16,17 +16,17 @@ public abstract class Calendar {
   abstract ZoneId timezone();
 
   public void toIcs(PrintWriter writer) {
-    writer.write("BEGIN:VCALENDAR\n");
-    writer.write("VERSION:2.0\n");
-    writer.write("PRODID:-//decamps/erzcal//NONSGML v1.0//EN\n");
-    writer.write("NAME:" + name() + "\n");
-    writer.write("DESCRIPTION:" + name() + "\n");
-    writer.write("TIMEZONE-ID:" + timezone() + "\n");
-    writer.write("TZID:" + timezone() + "\n");
+    writer.write("BEGIN:VCALENDAR\r\n");
+    writer.write("VERSION:2.0\r\n");
+    writer.write("PRODID:-//decamps/erzcal//NONSGML v1.0//EN\r\n");
+    writer.write("NAME:" + name() + "\r\n");
+    writer.write("DESCRIPTION:" + name() + "\r\n");
+    writer.write("TIMEZONE-ID:" + timezone() + "\r\n");
+    writer.write("TZID:" + timezone() + "\r\n");
     for (Event event : events()) {
       writer.write(event.toIcs());
     }
-    writer.write("END:VCALENDAR\n");
+    writer.write("END:VCALENDAR\r\n");
     writer.flush();
   }
 

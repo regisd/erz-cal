@@ -29,15 +29,15 @@ public abstract class Event {
     String followingDate = followingDate().format(DateTimeFormatter.BASIC_ISO_DATE);
     return String.format(
         // begin event
-        "BEGIN:VEVENT\n"
+        "BEGIN:VEVENT\r\n"
             + // start date – all day event
-            "DTSTART;VALUE=DATE:%s\n"
+            "DTSTART;VALUE=DATE:%s\r\n"
             + // start alone doesn't work on Google calendar
-            "DTEND;VALUE=DATE:%s\n"
+            "DTEND;VALUE=DATE:%s\r\n"
             + // event summary
-            "SUMMARY:%s\n"
+            "SUMMARY:%s\r\n"
             + // end event
-            "END:VEVENT\n",
+            "END:VEVENT\r\n",
         date, followingDate, summary());
   }
 }
