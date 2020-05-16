@@ -42,6 +42,7 @@ java_binary(
     main_class = "info.decamps.erzconverter.Main",
     deps = [
         "//java/info/decamps/erzconverter/csv",
+        "//java/info/decamps/erzconverter/ics",
         "//java/info/decamps/erzconverter/model",
         "@maven//:com_beust_jcommander",
     ],

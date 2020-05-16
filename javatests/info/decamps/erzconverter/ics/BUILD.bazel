@@ -1,0 +1,17 @@
+java_test(
+    name = "CalendarTest",
+    srcs = ["CalendarTest.java"],
+    deps = [
+        "//java/info/decamps/erzconverter/ics",
+        "@maven//:com_google_truth_truth",
+    ],
+)
+
+java_test(
+    name = "EventTest",
+    srcs = ["EventTest.java"],
+    deps = [
+        "//java/info/decamps/erzconverter/ics",
+        "@maven//:com_google_truth_truth",
+    ],
+)

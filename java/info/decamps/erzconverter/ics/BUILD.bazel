@@ -1,0 +1,11 @@
+java_library(
+    name = "ics",
+    srcs = glob(["*.java"]),
+    visibility = [
+        "//java/info/decamps/erzconverter:visibility",
+    ],
+    deps = [
+        "//java/info/decamps/erzconverter/model",
+        "//third_party:auto_value",
+    ],
+)

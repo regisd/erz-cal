@@ -6,6 +6,8 @@ import static java.util.stream.Collectors.joining;
 import com.beust.jcommander.JCommander;
 import com.beust.jcommander.Parameter;
 import info.decamps.erzconverter.csv.CalendarCsvParser;
+import info.decamps.erzconverter.ics.Calendar;
+import info.decamps.erzconverter.ics.Event;
 import info.decamps.erzconverter.model.PickUp;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -45,7 +47,9 @@ public class Main {
       File outFile = new File(outputDir, "ics_" + entry.getKey());
       try (PrintWriter writer = new PrintWriter(new FileOutputStream(outFile))) {
         System.out.println("Out in " + outFile.getAbsolutePath());
-        writer.write("OK");
+        List<Event> events =
+            entry.getValue().stream().map(Event::from).collect(Collectors.toList());
+        Calendar.create(events).toIcs(writer);
       }
     }
   }
