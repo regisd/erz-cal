@@ -1,5 +1,16 @@
 java_binary(
     name = "erzconverter_bin",
     srcs = ["Main.java"],
-    deps = [],
+    main_class = "info.decamps.erzconverter.Main",
+    deps = [
+        "//java/info/decamps/erzconverter/model",
+    ],
+)
+
+package_group(
+    name = "visibility",
+    packages = [
+        "//java/info/decamps/erzconverter/...",
+        "//javatests/info/decamps/erzconverter/...",
+    ],
 )

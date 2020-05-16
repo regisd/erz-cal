@@ -1,0 +1,10 @@
+java_library(
+    name = "model",
+    srcs = glob(["*.java"]),
+    visibility = [
+        "//java/info/decamps/erzconverter:visibility",
+    ],
+    deps = [
+        "//third_party:auto_value",
+    ],
+)
