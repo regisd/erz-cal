@@ -1,0 +1,23 @@
+filegroup(
+    name = "entsorgungskalender",
+    srcs = [
+        ":entsorgungskalender_bioabfall_2020",
+        ":entsorgungskalender_karton_2020",
+        ":entsorgungskalender_papier_2020",
+    ],
+)
+
+alias(
+    name = "entsorgungskalender_bioabfall_2020",
+    actual = "@entsorgungskalender_bioabfall_2020//file",
+)
+
+alias(
+    name = "entsorgungskalender_karton_2020",
+    actual = "@entsorgungskalender_karton_2020//file",
+)
+
+alias(
+    name = "entsorgungskalender_papier_2020",
+    actual = "@entsorgungskalender_papier_2020//file",
+)
