@@ -1,0 +1,13 @@
+You can contribute to this project under the terms of the Apache license.
+
+# Development process
+
+1. Fork the project
+2. Create a new branch from master
+3. Make your modifications
+4. Send a pull request
+
+# Code style
+
+This project follows the [Google java style guide](https://google.github.io/styleguide/javaguide.html).
+
