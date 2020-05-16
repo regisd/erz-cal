@@ -44,7 +44,7 @@ public class Main {
 
     Map<String, List<PickUp>> pickupsByLocation = splitPickupsByLocation(data);
     for (Map.Entry<String, List<PickUp>> entry : pickupsByLocation.entrySet()) {
-      File outFile = new File(outputDir, "ics_" + entry.getKey());
+      File outFile = new File(outputDir, "erz_" + entry.getKey() + ".ics");
       try (PrintWriter writer = new PrintWriter(new FileOutputStream(outFile))) {
         System.out.println("Out in " + outFile.getAbsolutePath());
         List<Event> events =
