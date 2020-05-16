@@ -30,6 +30,7 @@ public class CalendarTest {
                 + "TIMEZONE-ID:Europe/Paris\r\n"
                 + "TZID:Europe/Paris\r\n"
                 + "BEGIN:VEVENT\r\n"
+                + "UID:1\r\n"
                 + "DTSTART;VALUE=DATE:19790714\r\n"
                 + "DTEND;VALUE=DATE:19790715\r\n"
                 + "SUMMARY:Fête à la Bastille\r\n"

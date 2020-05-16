@@ -4,6 +4,7 @@ import com.google.auto.value.AutoValue;
 import info.decamps.erzconverter.model.PickUp;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Locale;
 
 @AutoValue
 public abstract class Event {
@@ -24,12 +25,15 @@ public abstract class Event {
     return create(pickup.date(), String.valueOf(pickup.type()));
   }
 
-  String toIcs() {
+  String toIcs(int uid) {
     String date = date().format(DateTimeFormatter.BASIC_ISO_DATE);
     String followingDate = followingDate().format(DateTimeFormatter.BASIC_ISO_DATE);
     return String.format(
+        Locale.ENGLISH,
         // begin event
         "BEGIN:VEVENT\r\n"
+            + // UID is required https://icalendar.org/iCalendar-RFC-5545/3-6-1-event-component.html
+            "UID:%d\r\n"
             + // start date – all day event
             "DTSTART;VALUE=DATE:%s\r\n"
             + // start alone doesn't work on Google calendar
@@ -38,6 +42,9 @@ public abstract class Event {
             "SUMMARY:%s\r\n"
             + // end event
             "END:VEVENT\r\n",
-        date, followingDate, summary());
+        uid,
+        date,
+        followingDate,
+        summary());
   }
 }

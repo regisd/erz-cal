@@ -23,8 +23,9 @@ public abstract class Calendar {
     writer.write("DESCRIPTION:" + name() + "\r\n");
     writer.write("TIMEZONE-ID:" + timezone() + "\r\n");
     writer.write("TZID:" + timezone() + "\r\n");
+    int uid = 0;
     for (Event event : events()) {
-      writer.write(event.toIcs());
+      writer.write(event.toIcs(++uid));
     }
     writer.write("END:VCALENDAR\r\n");
     writer.flush();
