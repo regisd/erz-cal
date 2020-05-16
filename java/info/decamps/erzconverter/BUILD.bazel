@@ -1,3 +1,38 @@
+genrule(
+    name = "gen_entsorgungskalender",
+    srcs = [
+        "//data/erz:entsorgungskalender_bioabfall_2020",
+    ],
+    outs = [
+        "ics_8001",
+        "ics_8002",
+        "ics_8003",
+        "ics_8004",
+        "ics_8005",
+        "ics_8006",
+        "ics_8008",
+        "ics_8032",
+        "ics_8037",
+        "ics_8038",
+        "ics_8041",
+        "ics_8044",
+        "ics_8045",
+        "ics_8046",
+        "ics_8047",
+        "ics_8048",
+        "ics_8049",
+        "ics_8050",
+        "ics_8051",
+        "ics_8052",
+        "ics_8053",
+        "ics_8055",
+        "ics_8057",
+        "ics_8064",
+    ],
+    cmd = "$(location :erzconverter_bin) --out $(RULEDIR) $<",
+    tools = [":erzconverter_bin"],
+)
+
 java_binary(
     name = "erzconverter_bin",
     srcs = ["Main.java"],
@@ -8,6 +43,7 @@ java_binary(
     deps = [
         "//java/info/decamps/erzconverter/csv",
         "//java/info/decamps/erzconverter/model",
+        "@maven//:com_beust_jcommander",
     ],
 )
 
