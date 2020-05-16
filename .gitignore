@@ -1,6 +1,9 @@
 # Bazel
 /bazel-*
 
+# Deployed pages
+/gh-pages
+
 # Compiled class file
 *.class
 
