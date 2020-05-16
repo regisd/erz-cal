@@ -13,6 +13,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -21,6 +22,9 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class Main {
+
+  ZoneId TZ_ZURICH = ZoneId.of("Europe/Zurich");
+
   @Parameter(names = "--out", description = "Output ics directory")
   String outDir;
 
@@ -50,7 +54,12 @@ public class Main {
         List<Event> events =
             entry.getValue().stream().map(Event::from).collect(Collectors.toList());
         String calendarName = "ERZ Calendar for " + entry.getKey();
-        Calendar.create(calendarName, events).toIcs(writer);
+        Calendar.builder()
+            .timezone(TZ_ZURICH)
+            .name(calendarName)
+            .events(events)
+            .build()
+            .toIcs(writer);
       }
     }
   }
