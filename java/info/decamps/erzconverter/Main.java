@@ -49,7 +49,8 @@ public class Main {
         System.out.println("Out in " + outFile.getAbsolutePath());
         List<Event> events =
             entry.getValue().stream().map(Event::from).collect(Collectors.toList());
-        Calendar.create(events).toIcs(writer);
+        String calendarName = "ERZ Calendar for " + entry.getKey();
+        Calendar.create(calendarName, events).toIcs(writer);
       }
     }
   }
