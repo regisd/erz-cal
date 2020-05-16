@@ -14,6 +14,7 @@ public class EventTest {
         .isEqualTo(
             "BEGIN:VEVENT\n"
                 + "DTSTART;VALUE=DATE:17890714\n"
+                + "DTEND;VALUE=DATE:17890715\n"
                 + "SUMMARY:Fête à la Bastille\n"
                 + "END:VEVENT\n");
   }

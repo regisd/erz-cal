@@ -24,6 +24,7 @@ public class CalendarTest {
                 + "DESCRIPTION:Test\n"
                 + "BEGIN:VEVENT\n"
                 + "DTSTART;VALUE=DATE:19790714\n"
+                + "DTEND;VALUE=DATE:19790715\n"
                 + "SUMMARY:Fête à la Bastille\n"
                 + "END:VEVENT\n"
                 + "END:VCALENDAR\n");
