@@ -15,9 +15,13 @@ http_archive(
 
 load("@rules_jvm_external//:defs.bzl", "maven_install")
 
+# Run bazel run @unpinned_maven//:pin
+# when deps are changed
 maven_install(
     name = "maven",
     artifacts = [
+        "com.google.auto.value:auto-value:jar:1.7",
+        "com.google.auto.value:auto-value-annotations:jar:1.7",
     ],
     maven_install_json = "//third_party:maven_install.json",
     repositories = [
@@ -26,6 +30,10 @@ maven_install(
         "https://repo1.maven.org/maven2",
     ],
 )
+
+load("@maven//:defs.bzl", "pinned_maven_install")
+
+pinned_maven_install()
 
 http_file(
     name = "entsorgungskalender_bioabfall_2020",
