@@ -1,8 +1,12 @@
 java_binary(
     name = "erzconverter_bin",
     srcs = ["Main.java"],
+    data = [
+        "//data/erz",
+    ],
     main_class = "info.decamps.erzconverter.Main",
     deps = [
+        "//java/info/decamps/erzconverter/csv",
         "//java/info/decamps/erzconverter/model",
     ],
 )

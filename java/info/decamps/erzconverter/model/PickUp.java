@@ -9,7 +9,7 @@ public abstract class PickUp {
 
   public abstract LocalDate date();
 
-  public PickUp create(String postcode, LocalDate date) {
+  public static PickUp create(String postcode, LocalDate date) {
     return new AutoValue_PickUp(postcode, date);
   }
 }

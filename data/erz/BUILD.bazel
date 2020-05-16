@@ -1,3 +1,12 @@
+package(default_visibility = ["//visibility:public"])
+
+filegroup(
+    name = "erz",
+    srcs = [
+        ":entsorgungskalender",
+    ],
+)
+
 filegroup(
     name = "entsorgungskalender",
     srcs = [

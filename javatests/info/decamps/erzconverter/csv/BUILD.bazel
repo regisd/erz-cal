@@ -1,0 +1,9 @@
+java_test(
+    name = "CalendarCsvParserTest",
+    srcs = ["CalendarCsvParserTest.java"],
+    deps = [
+        "//java/info/decamps/erzconverter/csv",
+        "//java/info/decamps/erzconverter/model",
+        "@maven//:com_google_truth_truth",
+    ],
+)
