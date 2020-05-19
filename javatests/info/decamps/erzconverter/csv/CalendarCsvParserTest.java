@@ -12,7 +12,7 @@ public class CalendarCsvParserTest {
 
   @Test
   public void parse() throws Exception {
-    CalendarCsvParser parser = CalendarCsvParser.create();
+    CalendarCsvParser parser = CalendarCsvParser.create(PickUp.Type.BIOABFALL);
     List<PickUp> data =
         parser.parse(
             new StringReader(
@@ -24,10 +24,10 @@ public class CalendarCsvParserTest {
                     + "\n"));
     assertThat(data)
         .containsExactly(
-            PickUp.create("8001", LocalDate.of(2020, 01, 06)),
-            PickUp.create("8001", LocalDate.of(2020, 01, 20)),
-            PickUp.create("8064", LocalDate.of(2020, 12, 17)),
-            PickUp.create("8064", LocalDate.of(2020, 12, 31)))
+            PickUp.create("8001", LocalDate.of(2020, 01, 06), PickUp.Type.BIOABFALL),
+            PickUp.create("8001", LocalDate.of(2020, 01, 20), PickUp.Type.BIOABFALL),
+            PickUp.create("8064", LocalDate.of(2020, 12, 17), PickUp.Type.BIOABFALL),
+            PickUp.create("8064", LocalDate.of(2020, 12, 31), PickUp.Type.BIOABFALL))
         .inOrder();
   }
 }

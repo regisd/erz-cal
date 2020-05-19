@@ -5,7 +5,9 @@ import static java.util.Collections.singletonList;
 import com.google.auto.value.AutoValue;
 import java.io.PrintWriter;
 import java.time.ZoneId;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @AutoValue
 public abstract class Calendar {
@@ -37,7 +39,13 @@ public abstract class Calendar {
 
   @AutoValue.Builder
   public abstract static class Builder {
+
+    private static final Comparator<Event> COMPARATOR_EVENT_DATE =
+        (o1, o2) -> o1.date().compareTo(o2.date());
+
     public abstract Builder name(String name);
+
+    abstract List<Event> events();
 
     public abstract Builder events(List<Event> events);
 
@@ -47,6 +55,11 @@ public abstract class Calendar {
 
     public abstract Builder timezone(ZoneId timezone);
 
-    public abstract Calendar build();
+    abstract Calendar internalBuild();
+
+    public Calendar build() {
+      events(events().stream().sorted(COMPARATOR_EVENT_DATE).collect(Collectors.toList()));
+      return internalBuild();
+    }
   }
 }

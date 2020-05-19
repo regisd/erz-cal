@@ -1,7 +1,7 @@
 package info.decamps.erzconverter;
 
 import static java.util.Collections.singleton;
-import static java.util.stream.Collectors.joining;
+import static java.util.stream.Collectors.toList;
 
 import com.beust.jcommander.JCommander;
 import com.beust.jcommander.Parameter;
@@ -15,11 +15,13 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.time.ZoneId;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.function.BinaryOperator;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Main {
 
@@ -28,8 +30,14 @@ public class Main {
   @Parameter(names = "--out", description = "Output ics directory")
   String outDir;
 
-  @Parameter(description = "List of input csv calendars")
-  List<String> calendars;
+  @Parameter(names = "--bioabfall", description = "Input calendar for organic waste")
+  String organicCalendar;
+
+  @Parameter(names = "--karton", description = "Input calendar for cardboard waste")
+  String cardboardCalendar;
+
+  @Parameter(names = "--papier", description = "Input calendar for paper waste")
+  String paperCalendar;
 
   public static void main(String[] args) throws Exception {
     Main main = new Main();
@@ -39,20 +47,23 @@ public class Main {
 
   private void run() throws IOException {
     File outputDir = new File(outDir);
-    System.out.println("Calendars " + calendars.stream().collect(joining(",")));
+    System.out.println("Calendars " + String.join(",", organicCalendar));
     System.out.println("Output in " + outputDir.getAbsolutePath());
 
-    CalendarCsvParser csvParser = CalendarCsvParser.create();
-    // TODO(regisd) Parse multiple inputs
-    List<PickUp> data = csvParser.parse(new File(calendars.get(0)));
+    List<PickUp> data =
+        Stream.of(
+                parseCalendar(PickUp.Type.BIOABFALL, organicCalendar),
+                parseCalendar(PickUp.Type.KARTON, cardboardCalendar),
+                parseCalendar(PickUp.Type.PAPIER, paperCalendar))
+            .flatMap(Collection::stream)
+            .collect(toList());
 
     Map<String, List<PickUp>> pickupsByLocation = splitPickupsByLocation(data);
     for (Map.Entry<String, List<PickUp>> entry : pickupsByLocation.entrySet()) {
       File outFile = new File(outputDir, "erz_" + entry.getKey() + ".ics");
       try (PrintWriter writer = new PrintWriter(new FileOutputStream(outFile))) {
         System.out.println("Out in " + outFile.getAbsolutePath());
-        List<Event> events =
-            entry.getValue().stream().map(Event::from).collect(Collectors.toList());
+        List<Event> events = entry.getValue().stream().map(Event::from).collect(toList());
         String calendarName = "ERZ Calendar for " + entry.getKey();
         Calendar.builder()
             .timezone(TZ_ZURICH)
@@ -62,6 +73,14 @@ public class Main {
             .toIcs(writer);
       }
     }
+  }
+
+  private List<PickUp> parseCalendar(PickUp.Type type, String csvFilename) throws IOException {
+    if (csvFilename == null) {
+      return new ArrayList<>(/*initialCapacity=*/ 0);
+    }
+    CalendarCsvParser csvParser = CalendarCsvParser.create(type);
+    return csvParser.parse(new File(csvFilename));
   }
 
   private Map<String, List<PickUp>> splitPickupsByLocation(List<PickUp> data) {

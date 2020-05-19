@@ -6,7 +6,10 @@ import java.time.LocalDate;
 @AutoValue
 public abstract class PickUp {
   public enum Type {
-    BIOABFALL("Bioabfall");
+    BIOABFALL("Bioabfall"),
+    PAPIER("Papier"),
+    KARTON("Karton");
+
     private final String summary;
 
     Type(String summary) {
@@ -25,7 +28,7 @@ public abstract class PickUp {
 
   public abstract Type type();
 
-  public static PickUp create(String postcode, LocalDate date) {
-    return new AutoValue_PickUp(postcode, date, Type.BIOABFALL);
+  public static PickUp create(String postcode, LocalDate date, Type type) {
+    return new AutoValue_PickUp(postcode, date, type);
   }
 }

@@ -2,6 +2,8 @@ genrule(
     name = "gen_entsorgungskalender",
     srcs = [
         "//data/erz:entsorgungskalender_bioabfall_2020",
+        "//data/erz:entsorgungskalender_papier_2020",
+        "//data/erz:entsorgungskalender_karton_2020",
     ],
     outs = [
         "erz_8001.ics",
@@ -29,7 +31,10 @@ genrule(
         "erz_8057.ics",
         "erz_8064.ics",
     ],
-    cmd = "$(location :erzconverter_bin) --out $(RULEDIR) $<",
+    cmd = "$(location :erzconverter_bin) --out $(RULEDIR)" +
+#          " --bioabfall $(location //data/erz:entsorgungskalender_bioabfall_2020)" +
+          " --papier $(location //data/erz:entsorgungskalender_papier_2020)" +
+          " --karton $(location //data/erz:entsorgungskalender_karton_2020)",
     tools = [":erzconverter_bin"],
 )
 

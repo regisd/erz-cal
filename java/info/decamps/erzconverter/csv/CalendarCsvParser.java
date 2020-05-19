@@ -13,14 +13,16 @@ import java.util.List;
 
 public class CalendarCsvParser {
 
+  private final PickUp.Type pickupType;
   private final Spec spec;
 
-  public CalendarCsvParser(Spec spec) {
+  public CalendarCsvParser(PickUp.Type pickupType, Spec spec) {
     this.spec = spec;
+    this.pickupType = pickupType;
   }
 
-  public static CalendarCsvParser create() {
-    return new CalendarCsvParser(Spec.DEFAULT);
+  public static CalendarCsvParser create(PickUp.Type pickupType) {
+    return new CalendarCsvParser(pickupType, Spec.DEFAULT);
   }
 
   public List<PickUp> parse(File csvFile) throws IOException {
@@ -52,7 +54,7 @@ public class CalendarCsvParser {
   private PickUp parseLine(String line) {
     String[] data = line.split(spec.cvsSplitBy());
     String date = data[1].substring(1, data[1].length() - 1); // trim `"`
-    return PickUp.create(data[0], LocalDate.parse(date));
+    return PickUp.create(data[0], LocalDate.parse(date), pickupType);
   }
 
   @AutoValue
