@@ -10,6 +10,7 @@ import info.decamps.erzconverter.ics.Calendar;
 import info.decamps.erzconverter.ics.Event;
 import info.decamps.erzconverter.model.PickUp;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -59,20 +60,7 @@ public class Main {
             .collect(toList());
 
     Map<String, List<PickUp>> pickupsByLocation = splitPickupsByLocation(data);
-    for (Map.Entry<String, List<PickUp>> entry : pickupsByLocation.entrySet()) {
-      File outFile = new File(outputDir, "erz_" + entry.getKey() + ".ics");
-      try (PrintWriter writer = new PrintWriter(new FileOutputStream(outFile))) {
-        System.out.println("Out in " + outFile.getAbsolutePath());
-        List<Event> events = entry.getValue().stream().map(Event::from).collect(toList());
-        String calendarName = "ERZ Calendar for " + entry.getKey();
-        Calendar.builder()
-            .timezone(TZ_ZURICH)
-            .name(calendarName)
-            .events(events)
-            .build()
-            .toIcs(writer);
-      }
-    }
+    generateIcs(outputDir, pickupsByLocation);
   }
 
   private List<PickUp> parseCalendar(PickUp.Type type, String csvFilename) throws IOException {
@@ -81,6 +69,31 @@ public class Main {
     }
     CalendarCsvParser csvParser = CalendarCsvParser.create(type);
     return csvParser.parse(new File(csvFilename));
+  }
+
+  private void generateIcs(File outputDir, Map<String, List<PickUp>> pickupsByLocation)
+      throws FileNotFoundException {
+    for (Map.Entry<String, List<PickUp>> entry : pickupsByLocation.entrySet()) {
+      String postCode = entry.getKey();
+      List<PickUp> pickups = entry.getValue();
+      File outFile = new File(outputDir, "erz_" + postCode + ".ics");
+      generateIcs(outFile, postCode, pickups);
+    }
+  }
+
+  private void generateIcs(File outFile, String postCode, List<PickUp> pickups)
+      throws FileNotFoundException {
+    try (PrintWriter writer = new PrintWriter(new FileOutputStream(outFile))) {
+      System.out.println("Out in " + outFile.getAbsolutePath());
+      List<Event> events = pickups.stream().map(Event::from).collect(toList());
+      String calendarName = "ERZ Calendar for " + postCode;
+      Calendar.builder()
+          .timezone(TZ_ZURICH)
+          .name(calendarName)
+          .events(events)
+          .build()
+          .toIcs(writer);
+    }
   }
 
   private Map<String, List<PickUp>> splitPickupsByLocation(List<PickUp> data) {
