@@ -24,6 +24,7 @@ maven_install(
         "com.google.auto.value:auto-value:jar:1.7",
         "com.google.auto.value:auto-value-annotations:jar:1.7",
         "com.google.truth:truth:0.36",
+        "org.apache.velocity:velocity:jar:1.7",
     ],
     maven_install_json = "//third_party:maven_install.json",
     repositories = [
