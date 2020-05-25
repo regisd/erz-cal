@@ -1,0 +1,9 @@
+java_library(
+    name = "index",
+    srcs = glob(["*.java"]),
+    resources = ["index.md.vm"],
+    visibility = ["//java/info/decamps/erzconverter:visibility"],
+    deps = [
+        "@maven//:org_apache_velocity_velocity",
+    ],
+)

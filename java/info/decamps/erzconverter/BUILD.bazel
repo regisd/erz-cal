@@ -32,7 +32,7 @@ genrule(
         "erz_8064.ics",
     ],
     cmd = "$(location :erzconverter_bin) --out $(RULEDIR)" +
-#          " --bioabfall $(location //data/erz:entsorgungskalender_bioabfall_2020)" +
+          #          " --bioabfall $(location //data/erz:entsorgungskalender_bioabfall_2020)" +
           " --papier $(location //data/erz:entsorgungskalender_papier_2020)" +
           " --karton $(location //data/erz:entsorgungskalender_karton_2020)",
     tools = [":erzconverter_bin"],
@@ -48,8 +48,10 @@ java_binary(
     deps = [
         "//java/info/decamps/erzconverter/csv",
         "//java/info/decamps/erzconverter/ics",
+        "//java/info/decamps/erzconverter/index",
         "//java/info/decamps/erzconverter/model",
         "@maven//:com_beust_jcommander",
+        "@maven//:org_apache_velocity_velocity",
     ],
 )
 

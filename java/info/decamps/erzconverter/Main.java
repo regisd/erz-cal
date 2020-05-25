@@ -8,6 +8,7 @@ import com.beust.jcommander.Parameter;
 import info.decamps.erzconverter.csv.CalendarCsvParser;
 import info.decamps.erzconverter.ics.Calendar;
 import info.decamps.erzconverter.ics.Event;
+import info.decamps.erzconverter.index.IndexGenerator;
 import info.decamps.erzconverter.model.PickUp;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -23,6 +24,7 @@ import java.util.function.BinaryOperator;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+import org.apache.velocity.runtime.parser.ParseException;
 
 public class Main {
 
@@ -46,7 +48,7 @@ public class Main {
     main.run();
   }
 
-  private void run() throws IOException {
+  private void run() throws IOException, ParseException {
     File outputDir = new File(outDir);
     System.out.println("Calendars " + String.join(",", organicCalendar));
     System.out.println("Output in " + outputDir.getAbsolutePath());
@@ -61,6 +63,18 @@ public class Main {
 
     Map<String, List<PickUp>> pickupsByLocation = splitPickupsByLocation(data);
     generateIcs(outputDir, pickupsByLocation);
+    new IndexGenerator().generate(pickupsByLocation.keySet());
+  }
+
+  private Map<String, List<PickUp>> splitPickupsByLocation(List<PickUp> data) {
+    Function<PickUp, String> keyMapper = PickUp::postcode;
+    Function<PickUp, List<PickUp>> valueMapper = pickUp -> new ArrayList<>(singleton(pickUp));
+    BinaryOperator<List<PickUp>> mergeFunction =
+        (pickUps, pickUps2) -> {
+          pickUps.addAll(pickUps2);
+          return pickUps;
+        };
+    return data.stream().collect(Collectors.toMap(keyMapper, valueMapper, mergeFunction));
   }
 
   private List<PickUp> parseCalendar(PickUp.Type type, String csvFilename) throws IOException {
@@ -94,16 +108,5 @@ public class Main {
           .build()
           .toIcs(writer);
     }
-  }
-
-  private Map<String, List<PickUp>> splitPickupsByLocation(List<PickUp> data) {
-    Function<PickUp, String> keyMapper = PickUp::postcode;
-    Function<PickUp, List<PickUp>> valueMapper = pickUp -> new ArrayList<>(singleton(pickUp));
-    BinaryOperator<List<PickUp>> mergeFunction =
-        (pickUps, pickUps2) -> {
-          pickUps.addAll(pickUps2);
-          return pickUps;
-        };
-    return data.stream().collect(Collectors.toMap(keyMapper, valueMapper, mergeFunction));
   }
 }
