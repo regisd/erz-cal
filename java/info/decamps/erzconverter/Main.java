@@ -66,9 +66,7 @@ public class Main {
       throws IOException {
     List<PickUp> data = parseCalendar(type, calendar);
     Map<String, List<PickUp>> pickupsByLocation = splitPickupsByLocation(data);
-    File subdir = new File(outputDir, type.name());
-    subdir.mkdir();
-    generateIcs(subdir, pickupsByLocation);
+    generateIcs(outputDir, type, pickupsByLocation);
   }
 
   private void generateIndex(File outputDir) throws IOException, ParseException {
@@ -105,22 +103,29 @@ public class Main {
     return csvParser.parse(new File(csvFilename));
   }
 
-  private void generateIcs(File outputDir, Map<String, List<PickUp>> pickupsByLocation)
+  private void generateIcs(File outputDir, PickUp.Type type,
+      Map<String, List<PickUp>> pickupsByLocation)
       throws FileNotFoundException {
+    File subdir = new File(outputDir, type.name());
+    subdir.mkdir();
     for (Map.Entry<String, List<PickUp>> entry : pickupsByLocation.entrySet()) {
       String postCode = entry.getKey();
       List<PickUp> pickups = entry.getValue();
-      File outFile = new File(outputDir, "erz_" + postCode + ".ics");
-      generateIcs(outFile, postCode, pickups);
+      File outFile = new File(subdir, "erz_" + postCode + ".ics");
+      generateIcs(outFile, type, postCode, pickups);
     }
   }
 
-  private void generateIcs(File outFile, String postCode, List<PickUp> pickups)
+  private void generateIcs(File outFile, PickUp.Type type,
+      String postCode, List<PickUp> pickups)
       throws FileNotFoundException {
     try (PrintWriter writer = new PrintWriter(new FileOutputStream(outFile))) {
       System.out.println("Out in " + outFile.getAbsolutePath());
-      List<Event> events = pickups.stream().map(Event::from).collect(toList());
-      String calendarName = "ERZ Calendar for " + postCode;
+      List<Event> events = pickups.stream()
+          .filter(p->p.type() == type)
+          .map(Event::from)
+          .collect(toList());
+      String calendarName =  String.format("%s Entsorgungs (%s)", type, postCode);
       Calendar.builder()
           .timezone(TZ_ZURICH)
           .name(calendarName)

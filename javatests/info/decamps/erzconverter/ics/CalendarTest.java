@@ -30,6 +30,7 @@ public class CalendarTest {
                 + "VERSION:2.0\r\n"
                 + "PRODID:-//decamps/erzcal//NONSGML v1.0//EN\r\n"
                 + "NAME:Test\r\n"
+                + "X-GOOGLE-CALENDAR-CONTENT-TITLE:Test\r\n"
                 + "DESCRIPTION:Test\r\n"
                 + "TIMEZONE-ID:Europe/Paris\r\n"
                 + "TZID:Europe/Paris\r\n"

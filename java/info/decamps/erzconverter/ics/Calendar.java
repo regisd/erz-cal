@@ -22,6 +22,7 @@ public abstract class Calendar {
     writer.write("VERSION:2.0\r\n");
     writer.write("PRODID:-//decamps/erzcal//NONSGML v1.0//EN\r\n");
     writer.write("NAME:" + name() + "\r\n");
+    writer.write("X-GOOGLE-CALENDAR-CONTENT-TITLE:" + name() + "\r\n");
     writer.write("DESCRIPTION:" + name() + "\r\n");
     writer.write("TIMEZONE-ID:" + timezone() + "\r\n");
     writer.write("TZID:" + timezone() + "\r\n");
