@@ -1,8 +1,9 @@
 BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:-//decamps/erzcal//NONSGML v1.0//EN
-NAME:ERZ Calendar for 8050
-DESCRIPTION:ERZ Calendar for 8050
+NAME:ERZ Papier Entsorgungs (8050)
+X-GOOGLE-CALENDAR-CONTENT-TITLE:ERZ Papier Entsorgungs (8050)
+DESCRIPTION:ERZ Papier Entsorgungs (8050)
 TIMEZONE-ID:Europe/Zurich
 TZID:Europe/Zurich
 BEGIN:VEVENT

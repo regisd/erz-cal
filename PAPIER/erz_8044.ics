@@ -1,8 +1,9 @@
 BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:-//decamps/erzcal//NONSGML v1.0//EN
-NAME:ERZ Calendar for 8044
-DESCRIPTION:ERZ Calendar for 8044
+NAME:ERZ Papier Entsorgungs (8044)
+X-GOOGLE-CALENDAR-CONTENT-TITLE:ERZ Papier Entsorgungs (8044)
+DESCRIPTION:ERZ Papier Entsorgungs (8044)
 TIMEZONE-ID:Europe/Zurich
 TZID:Europe/Zurich
 BEGIN:VEVENT

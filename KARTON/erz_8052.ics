@@ -1,8 +1,9 @@
 BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:-//decamps/erzcal//NONSGML v1.0//EN
-NAME:ERZ Calendar for 8052
-DESCRIPTION:ERZ Calendar for 8052
+NAME:ERZ Karton Entsorgungs (8052)
+X-GOOGLE-CALENDAR-CONTENT-TITLE:ERZ Karton Entsorgungs (8052)
+DESCRIPTION:ERZ Karton Entsorgungs (8052)
 TIMEZONE-ID:Europe/Zurich
 TZID:Europe/Zurich
 BEGIN:VEVENT
