@@ -1,6 +1,7 @@
 java_test(
     name = "IndexGeneratorTest",
     srcs = ["IndexGeneratorTest.java"],
+    data = ["index.golden.md"],
     deps = [
         "//java/info/decamps/erzconverter/index",
         "@maven//:com_google_guava_guava",

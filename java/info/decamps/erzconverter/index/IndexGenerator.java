@@ -2,8 +2,6 @@ package info.decamps.erzconverter.index;
 
 import static java.util.stream.Collectors.toList;
 
-import java.io.FileWriter;
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
@@ -21,13 +19,13 @@ import org.apache.velocity.runtime.parser.node.SimpleNode;
 public class IndexGenerator {
 
   private static final String LOG_TAG = "IndexGenerator";
+  private final Writer writer;
 
-  public void generate(Set<String> postCodes) throws IOException, ParseException {
-    Writer writer = new FileWriter("index.md");
-    generate(postCodes, writer);
+  public IndexGenerator(Writer writer) {
+    this.writer = writer;
   }
 
-  void generate(Set<String> postCodes, Writer writer) throws ParseException {
+  public void generate(Set<String> postCodes) throws ParseException {
     Context velocityContext = new VelocityContext();
     velocityContext.put("postCodes", postCodes.stream().sorted().collect(toList()));
 

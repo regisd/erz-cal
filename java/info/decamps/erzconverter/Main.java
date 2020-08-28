@@ -13,8 +13,10 @@ import info.decamps.erzconverter.model.PickUp;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.Writer;
 import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -53,6 +55,24 @@ public class Main {
     System.out.println("Calendars " + String.join(",", organicCalendar));
     System.out.println("Output in " + outputDir.getAbsolutePath());
 
+    generateCalendarsOfType(outputDir, PickUp.Type.BIOABFALL, organicCalendar);
+    generateCalendarsOfType(outputDir, PickUp.Type.KARTON, cardboardCalendar);
+    generateCalendarsOfType(outputDir, PickUp.Type.PAPIER, paperCalendar);
+
+    generateIndex(outputDir);
+  }
+
+  private void generateCalendarsOfType(File outputDir, PickUp.Type type, String calendar)
+      throws IOException {
+    List<PickUp> data = parseCalendar(type, calendar);
+    Map<String, List<PickUp>> pickupsByLocation = splitPickupsByLocation(data);
+    File subdir = new File(outputDir, type.name());
+    subdir.mkdir();
+    generateIcs(subdir, pickupsByLocation);
+  }
+
+  private void generateIndex(File outputDir) throws IOException, ParseException {
+    // TODO Optimize: Avoid double parsing
     List<PickUp> data =
         Stream.of(
                 parseCalendar(PickUp.Type.BIOABFALL, organicCalendar),
@@ -60,10 +80,10 @@ public class Main {
                 parseCalendar(PickUp.Type.PAPIER, paperCalendar))
             .flatMap(Collection::stream)
             .collect(toList());
-
     Map<String, List<PickUp>> pickupsByLocation = splitPickupsByLocation(data);
-    generateIcs(outputDir, pickupsByLocation);
-    new IndexGenerator().generate(pickupsByLocation.keySet());
+    try (Writer writer = new FileWriter(outputDir + "/index.md")) {
+      new IndexGenerator(writer).generate(pickupsByLocation.keySet());
+    }
   }
 
   private Map<String, List<PickUp>> splitPickupsByLocation(List<PickUp> data) {

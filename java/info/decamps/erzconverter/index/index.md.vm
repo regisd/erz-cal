@@ -1,1 +1,9 @@
-Hello World!
+# Persönlicher Entsorgungs-Kalender
+#set( $H = '#' )
+
+#foreach( $plz in $postCodes )
+$H$H $plz
+[Karton](KARTON/erz_${plz}.ics)
+[Papier](PAPIER/erz_${plz}.ics)
+
+#end
