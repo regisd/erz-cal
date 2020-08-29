@@ -1,10 +1,10 @@
-# Persönlicher Entsorgungs-Kalender
+# Persönlicher Entsorgungs-Kalender Zürich
 
-## 123
-[Karton](KARTON/erz_123.ics)
-[Papier](PAPIER/erz_123.ics)
+## Zürich 123
+<a href="webcal://regisd.github.io/erz-cal/KARTON/erz_123.ics">Karton<a/>
+<a href="webcal://regisd.github.io/erz-cal/PAPIER/erz_123.ics">Papier<a/>
 
-## 124
-[Karton](KARTON/erz_124.ics)
-[Papier](PAPIER/erz_124.ics)
+## Zürich 124
+<a href="webcal://regisd.github.io/erz-cal/KARTON/erz_124.ics">Karton<a/>
+<a href="webcal://regisd.github.io/erz-cal/PAPIER/erz_124.ics">Papier<a/>
 

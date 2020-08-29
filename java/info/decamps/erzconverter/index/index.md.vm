@@ -1,9 +1,9 @@
-# Persönlicher Entsorgungs-Kalender
+# Persönlicher Entsorgungs-Kalender Zürich
 #set( $H = '#' )
 
 #foreach( $plz in $postCodes )
-$H$H $plz
-[Karton](KARTON/erz_${plz}.ics)
-[Papier](PAPIER/erz_${plz}.ics)
+$H$H Zürich $plz
+<a href="webcal://regisd.github.io/erz-cal/KARTON/erz_${plz}.ics">Karton<a/>
+<a href="webcal://regisd.github.io/erz-cal/PAPIER/erz_${plz}.ics">Papier<a/>
 
 #end

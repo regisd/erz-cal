@@ -14,7 +14,7 @@ git clone --branch gh-pages https://github.com/regisd/erz-cal.git erz-cal-pages
 
 cd erz-cal
 bazel build //java/info/decamps/erzconverter:gen_entsorgungskalender
-cp bazel-bin/java/info/decamps/erzconverter/index.md ../erz-cal-pages
-cp -r bazel-bin/java/info/decamps/erzconverter/KARTON ../erz-cal-pages
-cp -r bazel-bin/java/info/decamps/erzconverter/PAPIER ../erz-cal-pages
+cp -f bazel-bin/java/info/decamps/erzconverter/index.md ../erz-cal-pages
+cp -f -r bazel-bin/java/info/decamps/erzconverter/KARTON ../erz-cal-pages
+cp -f -r bazel-bin/java/info/decamps/erzconverter/PAPIER ../erz-cal-pages
 ```
