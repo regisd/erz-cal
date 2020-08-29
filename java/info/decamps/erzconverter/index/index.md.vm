@@ -3,7 +3,7 @@
 
 #foreach( $plz in $postCodes )
 $H$H Zürich $plz
-<a href="webcal://regisd.github.io/erz-cal/KARTON/erz_${plz}.ics">Karton<a/>
-<a href="webcal://regisd.github.io/erz-cal/PAPIER/erz_${plz}.ics">Papier<a/>
+<a class="btn" href="webcal://regisd.github.io/erz-cal/KARTON/erz_${plz}.ics">Karton<a/>
+<a class="btn" href="webcal://regisd.github.io/erz-cal/PAPIER/erz_${plz}.ics">Papier<a/>
 
 #end
