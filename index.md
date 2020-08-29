@@ -1,98 +1,98 @@
-# Persönlicher Entsorgungs-Kalender
+# Persönlicher Entsorgungs-Kalender Zürich
 
-## 8001
-[Karton](KARTON/erz_8001.ics)
-[Papier](PAPIER/erz_8001.ics)
+## Zürich 8001
+<a class="btn" href="webcal://regisd.github.io/erz-cal/KARTON/erz_8001.ics">📦 Karton<a/>
+<a class="btn" href="webcal://regisd.github.io/erz-cal/PAPIER/erz_8001.ics">📃 Papier<a/>
 
-## 8002
-[Karton](KARTON/erz_8002.ics)
-[Papier](PAPIER/erz_8002.ics)
+## Zürich 8002
+<a class="btn" href="webcal://regisd.github.io/erz-cal/KARTON/erz_8002.ics">📦 Karton<a/>
+<a class="btn" href="webcal://regisd.github.io/erz-cal/PAPIER/erz_8002.ics">📃 Papier<a/>
 
-## 8003
-[Karton](KARTON/erz_8003.ics)
-[Papier](PAPIER/erz_8003.ics)
+## Zürich 8003
+<a class="btn" href="webcal://regisd.github.io/erz-cal/KARTON/erz_8003.ics">📦 Karton<a/>
+<a class="btn" href="webcal://regisd.github.io/erz-cal/PAPIER/erz_8003.ics">📃 Papier<a/>
 
-## 8004
-[Karton](KARTON/erz_8004.ics)
-[Papier](PAPIER/erz_8004.ics)
+## Zürich 8004
+<a class="btn" href="webcal://regisd.github.io/erz-cal/KARTON/erz_8004.ics">📦 Karton<a/>
+<a class="btn" href="webcal://regisd.github.io/erz-cal/PAPIER/erz_8004.ics">📃 Papier<a/>
 
-## 8005
-[Karton](KARTON/erz_8005.ics)
-[Papier](PAPIER/erz_8005.ics)
+## Zürich 8005
+<a class="btn" href="webcal://regisd.github.io/erz-cal/KARTON/erz_8005.ics">📦 Karton<a/>
+<a class="btn" href="webcal://regisd.github.io/erz-cal/PAPIER/erz_8005.ics">📃 Papier<a/>
 
-## 8006
-[Karton](KARTON/erz_8006.ics)
-[Papier](PAPIER/erz_8006.ics)
+## Zürich 8006
+<a class="btn" href="webcal://regisd.github.io/erz-cal/KARTON/erz_8006.ics">📦 Karton<a/>
+<a class="btn" href="webcal://regisd.github.io/erz-cal/PAPIER/erz_8006.ics">📃 Papier<a/>
 
-## 8008
-[Karton](KARTON/erz_8008.ics)
-[Papier](PAPIER/erz_8008.ics)
+## Zürich 8008
+<a class="btn" href="webcal://regisd.github.io/erz-cal/KARTON/erz_8008.ics">📦 Karton<a/>
+<a class="btn" href="webcal://regisd.github.io/erz-cal/PAPIER/erz_8008.ics">📃 Papier<a/>
 
-## 8032
-[Karton](KARTON/erz_8032.ics)
-[Papier](PAPIER/erz_8032.ics)
+## Zürich 8032
+<a class="btn" href="webcal://regisd.github.io/erz-cal/KARTON/erz_8032.ics">📦 Karton<a/>
+<a class="btn" href="webcal://regisd.github.io/erz-cal/PAPIER/erz_8032.ics">📃 Papier<a/>
 
-## 8037
-[Karton](KARTON/erz_8037.ics)
-[Papier](PAPIER/erz_8037.ics)
+## Zürich 8037
+<a class="btn" href="webcal://regisd.github.io/erz-cal/KARTON/erz_8037.ics">📦 Karton<a/>
+<a class="btn" href="webcal://regisd.github.io/erz-cal/PAPIER/erz_8037.ics">📃 Papier<a/>
 
-## 8038
-[Karton](KARTON/erz_8038.ics)
-[Papier](PAPIER/erz_8038.ics)
+## Zürich 8038
+<a class="btn" href="webcal://regisd.github.io/erz-cal/KARTON/erz_8038.ics">📦 Karton<a/>
+<a class="btn" href="webcal://regisd.github.io/erz-cal/PAPIER/erz_8038.ics">📃 Papier<a/>
 
-## 8041
-[Karton](KARTON/erz_8041.ics)
-[Papier](PAPIER/erz_8041.ics)
+## Zürich 8041
+<a class="btn" href="webcal://regisd.github.io/erz-cal/KARTON/erz_8041.ics">📦 Karton<a/>
+<a class="btn" href="webcal://regisd.github.io/erz-cal/PAPIER/erz_8041.ics">📃 Papier<a/>
 
-## 8044
-[Karton](KARTON/erz_8044.ics)
-[Papier](PAPIER/erz_8044.ics)
+## Zürich 8044
+<a class="btn" href="webcal://regisd.github.io/erz-cal/KARTON/erz_8044.ics">📦 Karton<a/>
+<a class="btn" href="webcal://regisd.github.io/erz-cal/PAPIER/erz_8044.ics">📃 Papier<a/>
 
-## 8045
-[Karton](KARTON/erz_8045.ics)
-[Papier](PAPIER/erz_8045.ics)
+## Zürich 8045
+<a class="btn" href="webcal://regisd.github.io/erz-cal/KARTON/erz_8045.ics">📦 Karton<a/>
+<a class="btn" href="webcal://regisd.github.io/erz-cal/PAPIER/erz_8045.ics">📃 Papier<a/>
 
-## 8046
-[Karton](KARTON/erz_8046.ics)
-[Papier](PAPIER/erz_8046.ics)
+## Zürich 8046
+<a class="btn" href="webcal://regisd.github.io/erz-cal/KARTON/erz_8046.ics">📦 Karton<a/>
+<a class="btn" href="webcal://regisd.github.io/erz-cal/PAPIER/erz_8046.ics">📃 Papier<a/>
 
-## 8047
-[Karton](KARTON/erz_8047.ics)
-[Papier](PAPIER/erz_8047.ics)
+## Zürich 8047
+<a class="btn" href="webcal://regisd.github.io/erz-cal/KARTON/erz_8047.ics">📦 Karton<a/>
+<a class="btn" href="webcal://regisd.github.io/erz-cal/PAPIER/erz_8047.ics">📃 Papier<a/>
 
-## 8048
-[Karton](KARTON/erz_8048.ics)
-[Papier](PAPIER/erz_8048.ics)
+## Zürich 8048
+<a class="btn" href="webcal://regisd.github.io/erz-cal/KARTON/erz_8048.ics">📦 Karton<a/>
+<a class="btn" href="webcal://regisd.github.io/erz-cal/PAPIER/erz_8048.ics">📃 Papier<a/>
 
-## 8049
-[Karton](KARTON/erz_8049.ics)
-[Papier](PAPIER/erz_8049.ics)
+## Zürich 8049
+<a class="btn" href="webcal://regisd.github.io/erz-cal/KARTON/erz_8049.ics">📦 Karton<a/>
+<a class="btn" href="webcal://regisd.github.io/erz-cal/PAPIER/erz_8049.ics">📃 Papier<a/>
 
-## 8050
-[Karton](KARTON/erz_8050.ics)
-[Papier](PAPIER/erz_8050.ics)
+## Zürich 8050
+<a class="btn" href="webcal://regisd.github.io/erz-cal/KARTON/erz_8050.ics">📦 Karton<a/>
+<a class="btn" href="webcal://regisd.github.io/erz-cal/PAPIER/erz_8050.ics">📃 Papier<a/>
 
-## 8051
-[Karton](KARTON/erz_8051.ics)
-[Papier](PAPIER/erz_8051.ics)
+## Zürich 8051
+<a class="btn" href="webcal://regisd.github.io/erz-cal/KARTON/erz_8051.ics">📦 Karton<a/>
+<a class="btn" href="webcal://regisd.github.io/erz-cal/PAPIER/erz_8051.ics">📃 Papier<a/>
 
-## 8052
-[Karton](KARTON/erz_8052.ics)
-[Papier](PAPIER/erz_8052.ics)
+## Zürich 8052
+<a class="btn" href="webcal://regisd.github.io/erz-cal/KARTON/erz_8052.ics">📦 Karton<a/>
+<a class="btn" href="webcal://regisd.github.io/erz-cal/PAPIER/erz_8052.ics">📃 Papier<a/>
 
-## 8053
-[Karton](KARTON/erz_8053.ics)
-[Papier](PAPIER/erz_8053.ics)
+## Zürich 8053
+<a class="btn" href="webcal://regisd.github.io/erz-cal/KARTON/erz_8053.ics">📦 Karton<a/>
+<a class="btn" href="webcal://regisd.github.io/erz-cal/PAPIER/erz_8053.ics">📃 Papier<a/>
 
-## 8055
-[Karton](KARTON/erz_8055.ics)
-[Papier](PAPIER/erz_8055.ics)
+## Zürich 8055
+<a class="btn" href="webcal://regisd.github.io/erz-cal/KARTON/erz_8055.ics">📦 Karton<a/>
+<a class="btn" href="webcal://regisd.github.io/erz-cal/PAPIER/erz_8055.ics">📃 Papier<a/>
 
-## 8057
-[Karton](KARTON/erz_8057.ics)
-[Papier](PAPIER/erz_8057.ics)
+## Zürich 8057
+<a class="btn" href="webcal://regisd.github.io/erz-cal/KARTON/erz_8057.ics">📦 Karton<a/>
+<a class="btn" href="webcal://regisd.github.io/erz-cal/PAPIER/erz_8057.ics">📃 Papier<a/>
 
-## 8064
-[Karton](KARTON/erz_8064.ics)
-[Papier](PAPIER/erz_8064.ics)
+## Zürich 8064
+<a class="btn" href="webcal://regisd.github.io/erz-cal/KARTON/erz_8064.ics">📦 Karton<a/>
+<a class="btn" href="webcal://regisd.github.io/erz-cal/PAPIER/erz_8064.ics">📃 Papier<a/>
 
