@@ -38,23 +38,24 @@ load("@maven//:defs.bzl", "pinned_maven_install")
 
 pinned_maven_install()
 
+# https://data.stadt-zuerich.ch/dataset?res_format=csv&tags=entsorgung&groups=umwelt
 http_file(
-    name = "entsorgungskalender_bioabfall_2020",
+    name = "entsorgungskalender_bioabfall",
     urls = [
-        "https://data.stadt-zuerich.ch/dataset/entsorgungskalender_gartenabfall/resource/a0953059-f4e6-4fe5-8db3-a2ccbda884a6/download/entsorgungskalender_bioabfall_2020.csv",
+        "https://data.stadt-zuerich.ch/dataset/erz_entsorgungskalender_bioabfall/download/entsorgungskalender_bioabfall_2021.csv",
     ],
 )
 
 http_file(
-    name = "entsorgungskalender_karton_2020",
+    name = "entsorgungskalender_karton",
     urls = [
-        "https://data.stadt-zuerich.ch/dataset/entsorgungskalender_karton/resource/6d28096a-1e04-43ef-8d18-0ce9464a7329/download/entsorgungskalender_karton_2020.csv",
+        "https://data.stadt-zuerich.ch/dataset/erz_entsorgungskalender_karton/download/entsorgungskalender_karton_2021.csv",
     ],
 )
 
 http_file(
-    name = "entsorgungskalender_papier_2020",
+    name = "entsorgungskalender_papier",
     urls = [
-        "https://data.stadt-zuerich.ch/dataset/entsorgungskalender_papier/resource/eeca6200-7cc1-4f05-af13-fc262b830149/download/entsorgungskalender_papier_2020.csv",
+        "https://data.stadt-zuerich.ch/dataset/erz_entsorgungskalender_papier/download/entsorgungskalender_papier_2021.csv",
     ],
 )

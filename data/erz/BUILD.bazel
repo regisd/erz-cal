@@ -18,15 +18,15 @@ filegroup(
 
 alias(
     name = "entsorgungskalender_bioabfall_2020",
-    actual = "@entsorgungskalender_bioabfall_2020//file",
+    actual = "@entsorgungskalender_bioabfall//file",
 )
 
 alias(
     name = "entsorgungskalender_karton_2020",
-    actual = "@entsorgungskalender_karton_2020//file",
+    actual = "@entsorgungskalender_karton//file",
 )
 
 alias(
     name = "entsorgungskalender_papier_2020",
-    actual = "@entsorgungskalender_papier_2020//file",
+    actual = "@entsorgungskalender_papier//file",
 )
