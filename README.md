@@ -6,6 +6,12 @@ https://data.stadt-zuerich.ch/dataset?q=Entsorgung
 This project converts the CSV to iCal format so that it can be imported in any calendar app
 such as Google Calendar or Apple Calendar.
 
+# Use calendar
+
+Visit https://regis.decamps.info/erz-cal/ to list the published ICS files.
+
+You can then easily add them to Google Calendar, Apple iCalendar, etc.
+
 ## Publish site
 
 ```sh
